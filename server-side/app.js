@@ -1,4 +1,5 @@
 import express, { json } from 'express';
+import indexRoute from './routes/index.routes.js';
 import cors from 'cors';
 
 export const app = express();
