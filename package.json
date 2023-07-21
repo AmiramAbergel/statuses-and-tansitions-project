@@ -1,0 +1,24 @@
+{
+  "name": "statuses-and-tansitions-project",
+  "version": "1.0.0",
+  "description": "web application for managing statuses and transitions between statuses",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "nodemon server/app.js",
+    "install-server": "cd ./server && npm install",
+    "install-client": "cd ./client && npm install --legacy-peer-deps",
+    "client": "cd ./client && npm start",
+    "server": "cd ./server && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
