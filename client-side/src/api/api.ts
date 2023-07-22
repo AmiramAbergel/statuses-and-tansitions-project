@@ -3,7 +3,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 interface ClientAPIArgs {
   endPoint: string;
   method: string;
-  data?: string;
+  data?: Transition | Status;
   params?: string;
 }
 

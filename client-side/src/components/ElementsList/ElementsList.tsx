@@ -11,7 +11,7 @@ interface ElementInterface {
 }
 
 const ElementsList: React.FC<ElementInterface> = (props) => {
-  const { elements, from, to } = props;
+  const { type, elements, from, to } = props;
   if (!elements || elements.length === 0) {
     return <h2>No elements found</h2>;
   }

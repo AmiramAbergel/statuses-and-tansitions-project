@@ -9,3 +9,8 @@ interface Transition {
   from: string;
   to: string;
 }
+
+interface Status {
+  id: string;
+  text: string;
+}
