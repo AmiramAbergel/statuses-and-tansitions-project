@@ -1,6 +1,7 @@
 import './App.css';
 import ElementControl from './components/ElementControl/ElementControl';
 import ElementsList from './components/ElementsList/ElementsList';
+import NewElement from './components/NewElement/NewElement';
 import Header from './components/UI/Header/Header';
 
 function App() {
@@ -8,7 +9,17 @@ function App() {
     <div className="App">
       <Header />
       <ElementControl />
-      <ElementsList elements={[]} />
+
+      <div>
+        <div>
+          <NewElement type="status" />
+          <ElementsList type="status" elements={[]} />
+        </div>
+        <div>
+          <NewElement type="transition" />
+          <ElementsList type="transition" elements={[]} />
+        </div>
+      </div>
     </div>
   );
 }
