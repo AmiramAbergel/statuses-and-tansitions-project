@@ -1,9 +1,21 @@
 import { createContext, useState, useEffect } from 'react';
 import { clientAPI } from '../api/api';
 
-export const TransitionsContext = createContext({});
+export interface TransitionContextInterface {
+  transitions: Transition[];
+  addTransition: (transition: Transition) => void;
+  deleteTransition: (transitionID: string) => void;
+  isLoading: boolean;
+}
 
-export const TransitionsContextProvider = (props) => {
+export const TransitionsContext = createContext<TransitionContextInterface>({
+  transitions: [],
+  addTransition: (transition: Transition) => {},
+  deleteTransition: (transitionID: string) => {},
+  isLoading: false,
+});
+
+export const TransitionsContextProvider: React.FC<{ children: React.ReactNode }> = (props) => {
   const [transitions, setTransitions] = useState<Transition[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -42,12 +54,16 @@ export const TransitionsContextProvider = (props) => {
     }
   };
 
-  const values = {
+  const contextvalues: TransitionContextInterface = {
     transitions,
     addTransition,
     deleteTransition,
     isLoading,
   };
 
-  return <TransitionsContext.Provider value={values}>{props.children}</TransitionsContext.Provider>;
+  return (
+    <TransitionsContext.Provider value={contextvalues}>
+      {props.children}
+    </TransitionsContext.Provider>
+  );
 };
