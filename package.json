@@ -2,7 +2,6 @@
   "name": "statuses-and-tansitions-project",
   "version": "1.0.0",
   "description": "web application for managing statuses and transitions between statuses",
-  "type": "module",
   "main": "server/app.js",
   "scripts": {
     "start": "nodemon server-side/app.js",
@@ -17,10 +16,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^8.2.0",
-    "typescript": "^5.1.6"
+    "concurrently": "^8.2.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.0"
   }
 }
